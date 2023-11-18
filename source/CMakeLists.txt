@@ -45,6 +45,7 @@ qt_add_executable(unrawer-qt MANUAL_FINALIZATION
     src/process.cpp
     src/processors.cpp
     src/settings.cpp
+    src/timer.cpp
     src/ui.cpp
     src/unrawer.cpp
 )

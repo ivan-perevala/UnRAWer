@@ -40,7 +40,7 @@ bool doProgress(std::atomic_size_t* fileCntr, size_t files, QProgressBar* progre
 
 bool doProcessing(QList<QUrl> urls, QProgressBar* progressBar, MainWindow* mainWindow) {
     std::vector<QString> fileNames;
-    Timer f_timer;
+    unrw::Timer f_timer;
 
 // todo: add support for user defined raw formats and move to global scope?
     auto raw_ext = OIIO::get_extension_map()["raw"];
@@ -161,7 +161,7 @@ bool doProcessing(QList<QUrl> urls, QProgressBar* progressBar, MainWindow* mainW
 
 
     mainWindow->emitUpdateTextSignal("Everything Done!");
-    std::cout << "Total processing time : " << f_timer.nowText() << " for " << fileNames.size() << " files." << std::endl;
+    std::cout << "Total processing time : " << f_timer << " for " << fileNames.size() << " files." << std::endl;
     bool ok = m_progress_callback(progressBar, 0.0f);
     return true;
 }
