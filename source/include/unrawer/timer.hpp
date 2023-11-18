@@ -22,28 +22,26 @@
 #include <chrono>
 #include <string>
 
-namespace unrw
-{
-    class Timer {
-    public:
-        Timer();
-        ~Timer();
+namespace unrw {
+class Timer {
+public:
+  Timer();
+  ~Timer();
 
-        template <typename T>
-        T now() const;
+  template <typename T> T now() const;
 
-        const std::string nowText(int w = 0, int p = 6) const;
+  const std::string nowText(int w = 0, int p = 6) const;
 
-        friend std::ostream& operator<<(std::ostream& os, const Timer& timer);
+  friend std::ostream &operator<<(std::ostream &os, const Timer &timer);
 
-    private:
-        std::chrono::high_resolution_clock::time_point start_;
-    };
+private:
+  std::chrono::high_resolution_clock::time_point start_;
+};
 
-    template float Timer::now<float>() const;
-    template double Timer::now<double>() const;
+template float Timer::now<float>() const;
+template double Timer::now<double>() const;
 
-    std::ostream& operator<<(std::ostream& os, const Timer& timer);
-}
+std::ostream &operator<<(std::ostream &os, const Timer &timer);
+} // namespace unrw
 +
 #endif // !_UNRAWER_TIMER_HPP

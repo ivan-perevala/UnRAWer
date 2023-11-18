@@ -19,21 +19,27 @@
 #ifndef _UNRAWER_UNRAWER_HPP
 #define _UNRAWER_UNRAWER_HPP
 
-#include <OpenImageIO/imageio.h>
 #include <OpenImageIO/imagebuf.h>
 #include <OpenImageIO/imagebufalgo.h>
+#include <OpenImageIO/imageio.h>
 
-#include "unrawer/ui.hpp"
 #include "unrawer/file_processor.hpp"
+#include "unrawer/ui.hpp"
 using namespace OIIO;
 
-bool unrawer_main(const std::string& inputFileName, const std::string& outputFileName,
-                  ColorConfig* colorconfig, std::string* lut_preset,
-                  QProgressBar* progressBar, MainWindow* mainWindow);
+bool unrawer_main(const std::string &inputFileName,
+                  const std::string &outputFileName,
+                  ColorConfig *colorconfig,
+                  std::string *lut_preset,
+                  QProgressBar *progressBar,
+                  MainWindow *mainWindow);
 
-std::pair<bool, std::shared_ptr<ImageBuf>>
-imgProcessor(ImageBuf& input_buf, ColorConfig* colorconfig, std::string* lut_preset,
-             std::shared_ptr<ProcessingParams>& processing_entry, libraw_processed_image_t* raw_image,
-             QProgressBar* progressBar, MainWindow* mainWindow);
+std::pair<bool, std::shared_ptr<ImageBuf>> imgProcessor(ImageBuf &input_buf,
+                                                        ColorConfig *colorconfig,
+                                                        std::string *lut_preset,
+                                                        std::shared_ptr<ProcessingParams> &processing_entry,
+                                                        libraw_processed_image_t *raw_image,
+                                                        QProgressBar *progressBar,
+                                                        MainWindow *mainWindow);
 
 #endif // !_UNRAWER_UNRAWER_HPP

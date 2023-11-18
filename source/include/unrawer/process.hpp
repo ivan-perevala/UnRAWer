@@ -23,6 +23,6 @@
 
 class MainWindow; // forward declaration
 
-bool doProcessing(QList<QUrl> URLs, QProgressBar* progressBar, MainWindow* mainWindow);
+bool doProcessing(QList<QUrl> URLs, QProgressBar *progressBar, MainWindow *mainWindow);
 
 #endif // !_UNRAWER_PROCESS_HPP

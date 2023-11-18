@@ -20,23 +20,23 @@
 #define _UNRAWER_UI_HPP
 
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QMenu>
+#include <QtWidgets/QMenuBar>
 
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QLabel>
-#include <QtGui/QDragEnterEvent>
-#include <QtGui/QDropEvent>
-#include <QtCore/QMimeData>
 #include <QtCore/QDebug>
 #include <QtCore/QFileInfo>
+#include <QtCore/QMimeData>
 #include <QtCore/QProcess>
+#include <QtGui/QDragEnterEvent>
+#include <QtGui/QDropEvent>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 
-#include <QtCore/QFutureWatcher>
 #include <QtConcurrent/QtConcurrentRun>
+#include <QtCore/QFutureWatcher>
 #include <QtCore/QRandomGenerator>
 
 #include "unrawer/process.hpp"
@@ -44,78 +44,76 @@
 #define VERSION_MAJOR 1
 #define VERSION_MINOR 45
 
-void setPBarColor(QProgressBar* progressBar, const QColor& color = QColor("#05B8CC"));
+void setPBarColor(QProgressBar *progressBar, const QColor &color = QColor("#05B8CC"));
 
 class DropArea : public QLabel {
-    Q_OBJECT  // Macro needed to handle signals and slots
+  Q_OBJECT // Macro needed to handle signals and slots
 
-public:
-    DropArea();
+      public : DropArea();
 
 signals:
-    void filesDropped(QList<QUrl> urls);  // New signal to be emitted when files are dropped
+  void filesDropped(QList<QUrl> urls); // New signal to be emitted when files are dropped
 
 protected:
-    void dragEnterEvent(QDragEnterEvent* event) override;
-    void dropEvent(QDropEvent* event) override;
+  void dragEnterEvent(QDragEnterEvent *event) override;
+  void dropEvent(QDropEvent *event) override;
 };
 
 class MainWindow : public QMainWindow {
-    Q_OBJECT  // Macro needed to handle signals and slots
-public:
-    MainWindow();
-    void emitUpdateTextSignal(const QString& text) { emit updateTextSignal(text); }  // Public method to emit the signal
+  Q_OBJECT // Macro needed to handle signals and slots
+      public : MainWindow();
+  void emitUpdateTextSignal(const QString &text) { emit updateTextSignal(text); } // Public method to emit the signal
 
 signals:
-    void updateTextSignal(const QString& text);
-    void changeProgressBarColorSignal(QColor color);
+  void updateTextSignal(const QString &text);
+  void changeProgressBarColorSignal(QColor color);
 
 public slots:
-    void setProgressBarValueSlot(int value) { progressBar->setValue(value); }
-    void changeProgressBarColorSlot(const QColor& color) { setPBarColor(progressBar, color); }
+  void setProgressBarValueSlot(int value) { progressBar->setValue(value); }
+  void changeProgressBarColorSlot(const QColor &color) { setPBarColor(progressBar, color); }
 
 private slots:
-    void restartApp();
-    void reloadConfig();
+  void restartApp();
+  void reloadConfig();
 
-    void toggleConsole(bool checked);
-    void verbLevel();
+  void toggleConsole(bool checked);
+  void verbLevel();
 
-    void toggleSubfldr(bool checked);
-    void startProcessing(QList<QUrl> urls);
-    void rngSettings();
-    void frmtSettings();
-    void bitSettings();
-    void rawSettings();
-    void halfSizeSettings(bool checked);
-    void demSettings();
-    void rclrSettings();
-    void lutSettings();
-    void lutPSettings();
-    void denoiseSettings();
-    void sharpSettings();
-    void sharpKSettings();
+  void toggleSubfldr(bool checked);
+  void startProcessing(QList<QUrl> urls);
+  void rngSettings();
+  void frmtSettings();
+  void bitSettings();
+  void rawSettings();
+  void halfSizeSettings(bool checked);
+  void demSettings();
+  void rclrSettings();
+  void lutSettings();
+  void lutPSettings();
+  void denoiseSettings();
+  void sharpSettings();
+  void sharpKSettings();
 
-    void prntSettings();
+  void prntSettings();
 
 private:
-    QFutureWatcher<bool> processingWatcher;
-    QProgressBar* progressBar;
+  QFutureWatcher<bool> processingWatcher;
+  QProgressBar *progressBar;
 
-    QAction* con_enable;
-    QList<QAction*> verbActions;
+  QAction *con_enable;
+  QList<QAction *> verbActions;
 
-    QList<QAction*> rngActions;
-    QList<QAction*> demActions;
-    QList<QAction*> frmtActions;
-    QList<QAction*> bitActions;
-    QList<QAction*> rawActions;
-    QList<QAction*> lutActions;
-    QList<QAction*> lutPActions;
-    QList<QAction*> denoiseActions;
-    QList<QAction*> sharpActions;
-    QList<QAction*> sharpKActions;
-    QList<QAction*> rclrActions;
+  QList<QAction *> rngActions;
+  QList<QAction *> demActions;
+  QList<QAction *> frmtActions;
+  QList<QAction *> bitActions;
+  QList<QAction *> rawActions;
+  QList<QAction *> lutActions;
+  QList<QAction *> lutPActions;
+  QList<QAction *> denoiseActions;
+  QList<QAction *> sharpActions;
+  QList<QAction *> sharpKActions;
+  QList<QAction *> rclrActions;
 };
 
 #endif // !_UNRAWER_UI_HPP

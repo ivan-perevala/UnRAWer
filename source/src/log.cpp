@@ -15,10 +15,9 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-//#include "unrawer/common.h"
+// #include "unrawer/common.h"
 
 #include <iomanip>
-
 
 #include "unrawer/log.hpp"
 
@@ -30,39 +29,32 @@ namespace logging = boost::log;
 namespace expr = boost::log::expressions;
 namespace attrs = boost::log::attributes;
 
-std::string format_thread_id(attrs::current_thread_id::value_type::native_type id)
-{
-	std::ostringstream os;
-	os << std::hex << std::setw(8) << std::setfill('0') << id;
-	return os.str();
+std::string format_thread_id(attrs::current_thread_id::value_type::native_type id) {
+  std::ostringstream os;
+  os << std::hex << std::setw(8) << std::setfill('0') << id;
+  return os.str();
 }
 
 // TODO: Make into a class with enhancements maybe?
-void Log_Init()
-{
-	boost::log::add_common_attributes();
-	boost::log::add_console_log
-	(
-		std::cout,
-		boost::log::keywords::format = "[%Severity%]<%ThreadID%> %Message%"
-		//boost::log::keywords::format = "[%TimeStamp%] [%Severity%] %File%(%Line%): %Message%"
-	);
+void Log_Init() {
+  boost::log::add_common_attributes();
+  boost::log::add_console_log(std::cout, boost::log::keywords::format = "[%Severity%]<%ThreadID%> %Message%"
+                              // boost::log::keywords::format = "[%TimeStamp%] [%Severity%] %File%(%Line%): %Message%"
+  );
 }
 
-void Log_SetVerbosity(int l)
-{
-	boost::log::core::get()->set_filter(
-		boost::log::trivial::severity >= (boost::log::trivial::fatal - l)
-		// log level is 0-5, 0 is most verbose
-		// 0 = trace, 1 = debug, 2 = info, 3 = warning, 4 = error, 5 = fatal
-		// fatal - 0 = only fatal errors, 
-		// fatal - 1 = error,
-		// fatal - 2 = warning, 
-		// fatal - 3 = info (default), 
-		// fatal - 4 = debug, 
-		// fatal - 5 = trace (most outputs)
-	);
+void Log_SetVerbosity(int l) {
+  boost::log::core::get()->set_filter(boost::log::trivial::severity >= (boost::log::trivial::fatal - l)
+                                      // log level is 0-5, 0 is most verbose
+                                      // 0 = trace, 1 = debug, 2 = info, 3 = warning, 4 = error, 5 = fatal
+                                      // fatal - 0 = only fatal errors,
+                                      // fatal - 1 = error,
+                                      // fatal - 2 = warning,
+                                      // fatal - 3 = info (default),
+                                      // fatal - 4 = debug,
+                                      // fatal - 5 = trace (most outputs)
+  );
 
-	//LOG(debug) << "DEBUGMSG";
-	//LOG(info) << "INFOMSG";
+  // LOG(debug) << "DEBUGMSG";
+  // LOG(info) << "INFOMSG";
 }
