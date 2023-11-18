@@ -366,3 +366,4 @@ FodyWeavers.xsd
 /plugins
 /bin
 /build
+!/source/release
