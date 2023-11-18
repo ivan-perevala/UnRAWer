@@ -43,5 +43,5 @@ template double Timer::now<double>() const;
 
 std::ostream &operator<<(std::ostream &os, const Timer &timer);
 } // namespace unrw
-+
+
 #endif // !_UNRAWER_TIMER_HPP
