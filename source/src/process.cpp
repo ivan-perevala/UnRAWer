@@ -19,10 +19,10 @@
 
 #include <QtWidgets/QtWidgets>
 
-#include "unrawer/unrawer.h"
-#include "unrawer/imageio.h"
-#include "unrawer/process.h"
-#include "unrawer/processors.h"
+#include "unrawer/unrawer.hpp"
+#include "unrawer/imageio.hpp"
+#include "unrawer/process.hpp"
+#include "unrawer/processors.hpp"
 
 std::map<std::string, std::unique_ptr<ThreadPool>> myPools;
 std::atomic_size_t fileCntr;

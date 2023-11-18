@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef _UNRAWER_TIMER_HPP
+#define _UNRAWER_TIMER_HPP
 
 #include <chrono>
 #include <iomanip>
@@ -56,3 +58,5 @@ public:
 private:
     high_resolution_clock::time_point start_;
 };
+
+#endif // !_UNRAWER_TIMER_HPP

@@ -14,15 +14,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 #pragma once
+#ifndef _UNRAWER_IMAGEIO_HPP
+#define _UNRAWER_IMAGEIO_HPP
 
 #include <iostream>
 #include <iomanip>
 #include <string>
 #include <math.h>
 
-#include "unrawer/timer.h"
-#include "unrawer/ui.h"
+#include "unrawer/timer.hpp"
+#include "unrawer/ui.hpp"
 
 #include <OpenImageIO/imageio.h>
 #include <OpenImageIO/imagebuf.h>
@@ -55,3 +58,5 @@ bool makePath(const std::string& out_path);
 bool thumb_load(ImageBuf& outBuf, const std::string inputFileName, MainWindow* mainWindow);
 
 void debugImageBufWrite(const ImageBuf& buf, const std::string& filename);
+
+#endif // !_UNRAWER_IMAGEIO_HPP

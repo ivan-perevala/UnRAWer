@@ -17,10 +17,10 @@
 
 #include <QtWidgets/QtWidgets>
 
-#include "unrawer/ui.h"
+#include "unrawer/ui.hpp"
 
-#include "unrawer/process.h"
-#include "unrawer/settings.h"
+#include "unrawer/process.hpp"
+#include "unrawer/settings.hpp"
 
 class MainWindow;
 

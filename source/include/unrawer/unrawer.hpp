@@ -14,14 +14,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 #pragma once
+#ifndef _UNRAWER_UNRAWER_HPP
+#define _UNRAWER_UNRAWER_HPP
 
 #include <OpenImageIO/imageio.h>
 #include <OpenImageIO/imagebuf.h>
 #include <OpenImageIO/imagebufalgo.h>
 
-#include "unrawer/ui.h"
-#include "unrawer/file_processor.h"
+#include "unrawer/ui.hpp"
+#include "unrawer/file_processor.hpp"
 using namespace OIIO;
 
 bool unrawer_main(const std::string& inputFileName, const std::string& outputFileName,
@@ -29,6 +32,8 @@ bool unrawer_main(const std::string& inputFileName, const std::string& outputFil
                   QProgressBar* progressBar, MainWindow* mainWindow);
 
 std::pair<bool, std::shared_ptr<ImageBuf>>
-imgProcessor(ImageBuf& input_buf, ColorConfig* colorconfig, std::string* lut_preset, 
-    std::shared_ptr<ProcessingParams>& processing_entry, libraw_processed_image_t* raw_image,
+imgProcessor(ImageBuf& input_buf, ColorConfig* colorconfig, std::string* lut_preset,
+             std::shared_ptr<ProcessingParams>& processing_entry, libraw_processed_image_t* raw_image,
              QProgressBar* progressBar, MainWindow* mainWindow);
+
+#endif // !_UNRAWER_UNRAWER_HPP

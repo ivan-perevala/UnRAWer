@@ -20,7 +20,7 @@
 #include <iomanip>
 
 
-#include "unrawer/log.h"
+#include "unrawer/log.hpp"
 
 #include <boost/log/expressions.hpp>
 #include <boost/log/utility/setup.hpp>

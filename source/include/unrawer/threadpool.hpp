@@ -16,6 +16,9 @@
  */
 #pragma once
 
+#ifndef _UNRAWER_THREADPOOL_HPP
+#define _UNRAWER_THREADPOOL_HPP
+
 #include <queue>
 #include <vector>
 #include <thread>
@@ -27,9 +30,6 @@
 #include <future>
 #include <stdexcept>
 #include <thread>
-
-#ifndef SAFEQUEUE_H
-#define SAFEQUEUE_H
 
 //template <typename T>
 //class SafeQueue {
@@ -128,11 +128,6 @@ public:
         return queue.empty();
     }
 };
-
-#endif // SAFEQUEUE_H
-
-#ifndef THREADPOOL_H
-#define THREADPOOL_H
 
 class ThreadPool {
 public:
@@ -324,4 +319,4 @@ private:
 //    std::atomic<int> tasks_count;
 //};
 
-#endif // THREADPOOL_H
+#endif // !_UNRAWER_THREADPOOL_HPP

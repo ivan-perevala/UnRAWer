@@ -14,15 +14,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 #pragma once
+#ifndef _UNRAWER_SETTINGS_HPP
+#define _UNRAWER_SETTINGS_HPP
 
 #include <string>
 #include <vector>
-#include "unrawer/ui.h"
-#include "unrawer/log.h"
+#include "unrawer/ui.hpp"
+#include "unrawer/log.hpp"
 
-#ifndef SETTINGS_H
-#define SETTINGS_H
 
 typedef unsigned char uchar;
 typedef unsigned short ushort;
@@ -150,4 +151,5 @@ extern Settings settings;
 
 bool loadSettings(Settings& settings, const std::string& filename);
 void printSettings(Settings& settings);
-#endif
+
+#endif // !_UNRAWER_SETTINGS_HPP

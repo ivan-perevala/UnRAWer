@@ -16,9 +16,9 @@
  */
 #pragma once
 
-#include "unrawer/imageio.h"
-#include "unrawer/settings.h"
-#include "unrawer/log.h"
+#include "unrawer/imageio.hpp"
+#include "unrawer/settings.hpp"
+#include "unrawer/log.hpp"
 
 int hue = 186;
 //void pbar_color_rand(QProgressBar* progressBar) {

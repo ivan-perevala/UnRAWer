@@ -18,17 +18,17 @@
 #include <string>
 #include <math.h>
 
-#include "unrawer/timer.h"
+#include "unrawer/timer.hpp"
 
 #include <OpenImageIO/imageio.h>
 #include <OpenImageIO/imagebuf.h>
 #include <OpenImageIO/imagebufalgo.h>
 #include <OpenImageIO/color.h>
 
-#include "unrawer/log.h"
-#include "unrawer/unrawer.h"
+#include "unrawer/log.hpp"
+#include "unrawer/unrawer.hpp"
 //#include "imageio.h"
-#include "unrawer/settings.h"
+#include "unrawer/settings.hpp"
 //#include "processing.h"
 
 using namespace OIIO;

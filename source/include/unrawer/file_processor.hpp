@@ -14,7 +14,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 #pragma once
+#ifndef _UNRAWER_FILE_PROCESSOR_HPP
+#define _UNRAWER_FILE_PROCESSOR_HPP
 
 #include <cctype>
 #include <string>
@@ -24,14 +27,11 @@
 #include <QtCore/QDir>
 #include <QtCore/QRegularExpression>
 
-#include "unrawer/log.h"
-#include "unrawer/settings.h"
-#include "unrawer/imageio.h"
-#include "unrawer/ui.h"
-#include "unrawer/threadpool.h"
-
-#ifndef FILEPROCESSOR_H
-#define FILEPROCESSOR_H
+#include "unrawer/log.hpp"
+#include "unrawer/settings.hpp"
+#include "unrawer/imageio.hpp"
+#include "unrawer/ui.hpp"
+#include "unrawer/threadpool.hpp"
 
 class OutPaths {
 public:
@@ -39,7 +39,7 @@ public:
         std::lock_guard<std::mutex> lock(m_mutex);
         if (t_paths.find(path) != t_paths.end()) { // Path is already in the set
             size_t i = t_paths[path];
-			return { true, i }; 				   // Return "found" and the index of the path
+            return { true, i }; 				   // Return "found" and the index of the path
         }
         else {                                     // Add the path to the set
             size_t i = m_paths.size();
@@ -58,21 +58,21 @@ public:
     //    status = t_paths[path];
     //};
     //size_t add_path(const std::string& path) { // Return the index of the added path and its status
-	//	std::lock_guard<std::mutex> lock(m_mutex);
+    //	std::lock_guard<std::mutex> lock(m_mutex);
     //    size_t size = m_paths.size();
     //    m_paths.push_back({ path, false });
     //    return size; 
-	//};
+    //};
 
     std::string get_path(size_t index) {
-		std::lock_guard<std::mutex> lock(m_mutex);
-		return m_paths[index].first;
-	}
+        std::lock_guard<std::mutex> lock(m_mutex);
+        return m_paths[index].first;
+    }
 
     bool get_path_status(size_t index) {
         std::lock_guard<std::mutex> lock(m_mutex);
-		return m_paths[index].second;
-	}
+        return m_paths[index].second;
+    }
 
     void set_path_status(size_t index, bool status) {
         std::lock_guard<std::mutex> lock(m_mutex);
@@ -99,7 +99,7 @@ enum class ProcessingStatus {
 };
 
 struct ProcessingParams {
-    
+
     std::shared_ptr<OIIO::ImageBuf> image;
     // File paths:
     std::string srcFile; // Source file full path name
@@ -107,24 +107,24 @@ struct ProcessingParams {
     std::string outFile; // Output file name without extension
     std::string outExt;  // Output file name extension
     // RAW image pointer
-    
+
     //LibRaw raw_data;
     std::shared_ptr<LibRaw> raw_data;
     libraw_processed_image_t* raw_image;
     // source settings:
     std::shared_ptr<OIIO::ImageSpec> srcSpec;
-    
+
     // output settings:
     OIIO::TypeDesc outType;
     std::shared_ptr<OIIO::ImageSpec> outSpec;
-    
+
     // Color config:
     std::string srcCSpace;
     std::string outCSpace;
-    
+
     // Processing params:
     std::string lut_preset;
-    
+
     // Filters:
     struct sharpening {
         bool enabled;
@@ -162,7 +162,6 @@ struct ProcessGlobals {
 
 extern ProcessGlobals procGlobals;
 
-#endif // FILEPROCESSOR_H
 
 std::string toLower(const std::string& str);
 
@@ -176,3 +175,4 @@ std::optional<std::string> getPresetfromName(const QString& fileName, Settings* 
 
 std::tuple<QString, QString, QString> getOutName(QString& path, QString& baseName, QString& extension, QString& prest_sfx, Settings* settings);
 
+#endif // !_UNRAWER_FILE_PROCESSOR_HPP

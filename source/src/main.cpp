@@ -17,7 +17,7 @@
 
 #include <QtWidgets/QtWidgets>
 
-#include "unrawer/settings.h"
+#include "unrawer/settings.hpp"
 
 int main(int argc, char* argv[]) {
     HWND consoleWindow = GetConsoleWindow();

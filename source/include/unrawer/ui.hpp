@@ -16,6 +16,9 @@
  */
 #pragma once
 
+#ifndef _UNRAWER_UI_HPP
+#define _UNRAWER_UI_HPP
+
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QMenu>
@@ -36,7 +39,7 @@
 #include <QtConcurrent/QtConcurrentRun>
 #include <QtCore/QRandomGenerator>
 
-#include "unrawer/process.h"
+#include "unrawer/process.hpp"
 
 #define VERSION_MAJOR 1
 #define VERSION_MINOR 45
@@ -74,7 +77,7 @@ public slots:
 private slots:
     void restartApp();
     void reloadConfig();
-    
+
     void toggleConsole(bool checked);
     void verbLevel();
 
@@ -115,3 +118,4 @@ private:
     QList<QAction*> rclrActions;
 };
 
+#endif // !_UNRAWER_UI_HPP

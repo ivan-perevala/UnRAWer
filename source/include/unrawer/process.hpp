@@ -16,8 +16,13 @@
  */
 
 #pragma once
-#include "unrawer/ui.h"
+#ifndef _UNRAWER_PROCESS_HPP
+#define _UNRAWER_PROCESS_HPP
+
+#include "unrawer/ui.hpp"
 
 class MainWindow; // forward declaration
 
 bool doProcessing(QList<QUrl> URLs, QProgressBar* progressBar, MainWindow* mainWindow);
+
+#endif // !_UNRAWER_PROCESS_HPP

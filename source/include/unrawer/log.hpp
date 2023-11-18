@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef _UNRAWER_LOG_HPP
+#define _UNRAWER_LOG_HPP
 
 #include <boost/log/core.hpp>
 #include <boost/log/trivial.hpp>
@@ -24,3 +26,5 @@
 
 void Log_Init();
 void Log_SetVerbosity(int l);
+
+#endif // !_UNRAWER_LOG_HPP
