@@ -28,15 +28,10 @@ User Manual
 TODO
 
 ### Required dependencies
-* OpenImageIO
-* LibRAW
-* OpenImageIO
-* libTIFF
-* OpenJpeg
-* libJpeg-turbo
-* zlib-ng
-* QT6
-* etc.
+* [OpenImageIO](https://github.com/AcademySoftwareFoundation/OpenImageIO) build with necessary modules.
+* [Boost.log](https://www.boost.org/doc/libs/1_83_0/libs/log/doc/html/index.html)
+* [QT6](https://www.qt.io/product/qt6)
+* [toml11](https://github.com/ToruNiina/toml11)
 
 ![UnRAWer3](https://github.com/ssh4net/UnRAWer/assets/3924000/3e5b2cd8-349b-47da-8ee0-7959c22bfc70)
 
