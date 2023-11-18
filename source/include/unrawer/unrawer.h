@@ -20,8 +20,8 @@
 #include <OpenImageIO/imagebuf.h>
 #include <OpenImageIO/imagebufalgo.h>
 
-#include "ui.h"
-#include "fileProcessor.h"
+#include "unrawer/ui.h"
+#include "unrawer/file_processor.h"
 using namespace OIIO;
 
 bool unrawer_main(const std::string& inputFileName, const std::string& outputFileName,

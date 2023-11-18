@@ -19,8 +19,8 @@
 #ifndef PROCESSORS_H
 #define PROCESSORS_H
 
-#include "threadpool.h"
-#include "fileProcessor.h"
+#include "unrawer/threadpool.h"
+#include "unrawer/file_processor.h"
 
 #include <OpenImageIO/imageio.h>
 #include <OpenImageIO/imagebuf.h>

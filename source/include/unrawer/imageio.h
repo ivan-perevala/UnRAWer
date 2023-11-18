@@ -21,8 +21,8 @@
 #include <string>
 #include <math.h>
 
-#include "Timer.h"
-#include "ui.h"
+#include "unrawer/timer.h"
+#include "unrawer/ui.h"
 
 #include <OpenImageIO/imageio.h>
 #include <OpenImageIO/imagebuf.h>

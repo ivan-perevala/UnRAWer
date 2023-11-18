@@ -18,8 +18,8 @@
 
 #include <string>
 #include <vector>
-#include "ui.h"
-#include "LOG.H"
+#include "unrawer/ui.h"
+#include "unrawer/log.h"
 
 #ifndef SETTINGS_H
 #define SETTINGS_H

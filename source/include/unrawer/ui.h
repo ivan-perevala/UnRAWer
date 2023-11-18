@@ -36,7 +36,7 @@
 #include <QtConcurrent/QtConcurrentRun>
 #include <QtCore/QRandomGenerator>
 
-#include "process.h"
+#include "unrawer/process.h"
 
 #define VERSION_MAJOR 1
 #define VERSION_MINOR 45

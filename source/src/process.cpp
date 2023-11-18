@@ -17,11 +17,12 @@
 
 //#include "ui.h"
 
-#include "Unrawer.h"
-#include "stdafx.h"
-#include "imageio.h"
-#include "process.h"
-#include "processors.h"
+#include <QtWidgets/QtWidgets>
+
+#include "unrawer/unrawer.h"
+#include "unrawer/imageio.h"
+#include "unrawer/process.h"
+#include "unrawer/processors.h"
 
 std::map<std::string, std::unique_ptr<ThreadPool>> myPools;
 std::atomic_size_t fileCntr;

@@ -18,8 +18,8 @@
 //#include <toml++/toml.h>
 #include <toml.hpp>
 #include <filesystem>
-#include "settings.h"
-#include "Log.h"
+#include "unrawer/settings.h"
+#include "unrawer/log.h"
 
 Settings settings;
 

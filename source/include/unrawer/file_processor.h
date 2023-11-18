@@ -24,11 +24,11 @@
 #include <QtCore/QDir>
 #include <QtCore/QRegularExpression>
 
-#include "Log.h"
-#include "settings.h"
-#include "imageio.h"
-#include "ui.h"
-#include "threadpool.h"
+#include "unrawer/log.h"
+#include "unrawer/settings.h"
+#include "unrawer/imageio.h"
+#include "unrawer/ui.h"
+#include "unrawer/threadpool.h"
 
 #ifndef FILEPROCESSOR_H
 #define FILEPROCESSOR_H

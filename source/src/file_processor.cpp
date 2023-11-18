@@ -15,7 +15,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "fileProcessor.h"
+#include "unrawer/file_processor.h"
 
 std::string toLower(const std::string& str) {
     std::string strCopy = str;

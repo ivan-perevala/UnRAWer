@@ -15,11 +15,12 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "stdafx.h"
-#include "ui.h"
+#include <QtWidgets/QtWidgets>
 
-#include "process.h"
-#include "settings.h"
+#include "unrawer/ui.h"
+
+#include "unrawer/process.h"
+#include "unrawer/settings.h"
 
 class MainWindow;
 

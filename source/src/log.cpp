@@ -15,8 +15,8 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "Common.h"
-#include "Log.h"
+#include "unrawer/common.h"
+#include "unrawer/log.h"
 
 #include <boost/log/expressions.hpp>
 #include <boost/log/utility/setup.hpp>

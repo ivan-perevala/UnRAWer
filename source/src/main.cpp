@@ -15,8 +15,9 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "stdafx.h"
-#include "settings.h"
+#include <QtWidgets/QtWidgets>
+
+#include "unrawer/settings.h"
 
 int main(int argc, char* argv[]) {
     HWND consoleWindow = GetConsoleWindow();
