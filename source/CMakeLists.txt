@@ -27,7 +27,6 @@ find_package(OpenImageIO CONFIG REQUIRED)
 find_package(toml11 CONFIG REQUIRED)
 
 qt_add_executable(unrawer-qt MANUAL_FINALIZATION
-    include/unrawer/common.h
     include/unrawer/file_processor.h
     include/unrawer/imageio.h
     include/unrawer/log.h
